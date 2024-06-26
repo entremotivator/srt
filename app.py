@@ -26,12 +26,13 @@ def view_subtitles_page():
         display_subtitles(subtitles)
 
 def display_subtitles(subtitles):
-    st.header('Subtitle Text')
+    st.header('Subtitle Words')
 
-    # Display subtitles as text
-    for idx, subtitle in enumerate(subtitles):
-        st.subheader(f'Subtitle {idx + 1}')
-        st.write(subtitle.text)
+    # Display subtitles as individual words
+    for subtitle in subtitles:
+        words = subtitle.text.split()  # Split subtitle text into words
+        for word in words:
+            st.write(word)
 
 def create_subtitles_page():
     st.title('Create Subtitles')
